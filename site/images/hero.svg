@@ -1,38 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#8ba88a"/>
-      <stop offset="60%" stop-color="#c4b99a"/>
-      <stop offset="100%" stop-color="#8b6a3f"/>
+      <stop offset="0%" stop-color="#9bb0aa"/>
+      <stop offset="60%" stop-color="#cdd8d3"/>
+      <stop offset="100%" stop-color="#6e837e"/>
     </linearGradient>
     <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#5a3825"/>
-      <stop offset="100%" stop-color="#2c1810"/>
+      <stop offset="0%" stop-color="#3d524d"/>
+      <stop offset="100%" stop-color="#28332f"/>
     </linearGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#sky)"/>
   <!-- Distant hills -->
-  <path d="M0 600 Q300 520 600 580 T1200 560 T1600 590 L1600 700 L0 700 Z" fill="#4a6741" opacity="0.6"/>
-  <path d="M0 650 Q400 580 800 640 T1600 660 L1600 750 L0 750 Z" fill="#344a2f" opacity="0.7"/>
+  <path d="M0 600 Q300 520 600 580 T1200 560 T1600 590 L1600 700 L0 700 Z" fill="#596d69" opacity="0.6"/>
+  <path d="M0 650 Q400 580 800 640 T1600 660 L1600 750 L0 750 Z" fill="#455651" opacity="0.7"/>
   <!-- Ground -->
   <rect y="700" width="1600" height="200" fill="url(#ground)"/>
   <!-- Oak tree (left) -->
   <g transform="translate(220 720)">
-    <rect x="-12" y="-100" width="24" height="100" fill="#2c1810"/>
-    <circle cx="0" cy="-150" r="110" fill="#4a6741"/>
-    <circle cx="-60" cy="-130" r="70" fill="#344a2f"/>
-    <circle cx="55" cy="-120" r="75" fill="#5a7048"/>
+    <rect x="-12" y="-100" width="24" height="100" fill="#28332f"/>
+    <circle cx="0" cy="-150" r="110" fill="#596d69"/>
+    <circle cx="-60" cy="-130" r="70" fill="#455651"/>
+    <circle cx="55" cy="-120" r="75" fill="#6e837e"/>
   </g>
   <!-- Oak tree (right, smaller) -->
   <g transform="translate(1380 730)">
-    <rect x="-9" y="-80" width="18" height="80" fill="#2c1810"/>
-    <circle cx="0" cy="-120" r="90" fill="#4a6741"/>
-    <circle cx="-45" cy="-100" r="55" fill="#344a2f"/>
+    <rect x="-9" y="-80" width="18" height="80" fill="#28332f"/>
+    <circle cx="0" cy="-120" r="90" fill="#596d69"/>
+    <circle cx="-45" cy="-100" r="55" fill="#455651"/>
   </g>
   <!-- Construction silhouette: house frame -->
-  <g transform="translate(800 720)" stroke="#1f1a14" stroke-width="6" fill="none">
+  <g transform="translate(800 720)" stroke="#1b211f" stroke-width="6" fill="none">
     <!-- Foundation -->
-    <rect x="-180" y="-20" width="360" height="20" fill="#1f1a14"/>
+    <rect x="-180" y="-20" width="360" height="20" fill="#1b211f"/>
     <!-- Frame -->
     <polyline points="-180,-20 -180,-180 0,-260 180,-180 180,-20"/>
     <line x1="-180" y1="-180" x2="180" y2="-180"/>
