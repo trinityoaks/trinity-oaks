@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handyman, Painting & Payment Processor Reference — 2026</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #555;
+    --accent: #0b6cb8;
+    --border: #d8d8d8;
+    --row-alt: #f7f7f7;
+    --code-bg: #f0f0f0;
+    --callout-bg: #fff8e1;
+    --callout-border: #f0c040;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.25rem 4rem;
+    line-height: 1.55;
+  }
+  h1 {
+    font-size: 2rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.4rem;
+    margin-top: 2.5rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.25rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    color: #333;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td {
+    background: var(--row-alt);
+  }
+  td.num { text-align: center; width: 3rem; font-weight: 600; color: var(--muted); }
+  td.rate { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: 0.25rem 0; }
+  .callout {
+    background: var(--callout-bg);
+    border-left: 4px solid var(--callout-border);
+    padding: 0.75rem 1rem;
+    margin: 1.25rem 0;
+    border-radius: 4px;
+  }
+  .bottom-line {
+    background: #e8f4fd;
+    border-left: 4px solid var(--accent);
+    padding: 0.85rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  code {
+    background: var(--code-bg);
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.92em;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  hr {
+    border: none;
+    border-top: 2px dashed var(--border);
+    margin: 3rem 0;
+  }
+  pre.diagram {
+    background: #f4f7fa;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    overflow-x: auto;
+    color: #333;
+  }
+  @media print {
+    body { max-width: 100%; margin: 0; padding: 0.5rem; }
+    h1 { page-break-before: always; }
+    h1:first-of-type { page-break-before: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="meta">
+  <strong>Pricing Reference — 2026 (US average)</strong><br>
+  Compiled from conversation export · prepared 2026-05-14
+</header>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: HANDYMAN SERVICES                                  -->
+<!-- ============================================================ -->
+<h1>Handyman Services &amp; Suggested Rates</h1>
+
+<p>Rates assume a typical residential job, materials billed separately unless noted.
+Most handymen also set a <strong>minimum service call of $75–$125</strong> regardless of task.</p>
+
+<table>
+  <thead>
+    <tr><th style="width:3rem;">#</th><th>Service</th><th style="width:14rem;">Suggested Rate</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="num">1</td><td>General hourly labor</td><td class="rate">$65–$95/hr</td></tr>
+    <tr><td class="num">2</td><td>TV wall mounting (up to 65")</td><td class="rate">$150–$250 flat</td></tr>
+    <tr><td class="num">3</td><td>Ceiling fan install / replace</td><td class="rate">$125–$200 per fan</td></tr>
+    <tr><td class="num">4</td><td>Light fixture replacement</td><td class="rate">$75–$150 per fixture</td></tr>
+    <tr><td class="num">5</td><td>Interior door install (pre-hung)</td><td class="rate">$150–$300 per door</td></tr>
+    <tr><td class="num">6</td><td>Door lock / deadbolt replacement</td><td class="rate">$60–$120 per lock</td></tr>
+    <tr><td class="num">7</td><td>Drywall patch (hole ≤ 12")</td><td class="rate">$100–$250 per patch</td></tr>
+    <tr><td class="num">8</td><td>Interior painting</td><td class="rate">$1.50–$3.50/sq ft or $40/hr</td></tr>
+    <tr><td class="num">9</td><td>Faucet replacement (kitchen/bath)</td><td class="rate">$150–$275 per faucet</td></tr>
+    <tr><td class="num">10</td><td>Toilet replacement</td><td class="rate">$200–$400 per toilet</td></tr>
+    <tr><td class="num">11</td><td>Garbage disposal install</td><td class="rate">$150–$250</td></tr>
+    <tr><td class="num">12</td><td>Caulking (tub, sink, windows)</td><td class="rate">$8–$15/linear ft, $125 min</td></tr>
+    <tr><td class="num">13</td><td>Furniture / IKEA assembly</td><td class="rate">$50–$80/hr</td></tr>
+    <tr><td class="num">14</td><td>Picture / shelf / mirror hanging</td><td class="rate">$50–$100 per item</td></tr>
+    <tr><td class="num">15</td><td>Smart thermostat install</td><td class="rate">$100–$175</td></tr>
+    <tr><td class="num">16</td><td>Gutter cleaning (single story)</td><td class="rate">$125–$200 per house</td></tr>
+    <tr><td class="num">17</td><td>Pressure washing (driveway/deck)</td><td class="rate">$0.30–$0.50/sq ft</td></tr>
+    <tr><td class="num">18</td><td>Deck board / railing repair</td><td class="rate">$75–$150 per board + materials</td></tr>
+    <tr><td class="num">19</td><td>Tile repair / regrouting (small area)</td><td class="rate">$200–$450 per job</td></tr>
+    <tr><td class="num">20</td><td>Weather stripping / door sweep</td><td class="rate">$60–$120 per door</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Pricing tips</strong>
+  <ul>
+    <li>Bundle small tasks into a half-day ($300–$400) or full-day ($600–$800) rate — more attractive to customers than nickel-and-diming.</li>
+    <li>Add 15–25% markup on materials you supply.</li>
+    <li>Charge a trip fee ($25–$50) outside a 15-mile radius.</li>
+    <li>Premium markets (NYC, SF, Seattle, Boston) run 30–50% above these numbers; rural Midwest/South runs 15–25% below.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: TRAVEL CHARGES                                     -->
+<!-- ============================================================ -->
+<h1>Travel Charges — Industry Standard</h1>
+
+<p>Most handymen <strong>do not include travel for free</strong>. Here's how it typically breaks down.</p>
+
+<h2>Common Approaches</h2>
+<table>
+  <thead>
+    <tr><th>Method</th><th>Typical Charge</th><th>When to Use</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Free within local radius</td><td class="rate">First 10–15 miles free</td><td>Best for marketing; absorb cost into hourly rate</td></tr>
+    <tr><td>Flat trip / service fee</td><td class="rate">$25–$75 per visit</td><td>Simple, predictable for customer</td></tr>
+    <tr><td>Per-mile beyond radius</td><td class="rate">$0.70–$1.50/mile (round trip)</td><td>Fair for occasional far jobs</td></tr>
+    <tr><td>Minimum service call</td><td class="rate">$75–$150 (covers 1st hour + travel)</td><td>Industry standard — protects against tiny jobs</td></tr>
+    <tr><td>Billable travel time</td><td class="rate">Half hourly rate, or full rate after 30 min</td><td>Long-distance / commercial work</td></tr>
+  </tbody>
+</table>
+
+<h2>Recommended Structure for a Solo Handyman</h2>
+<ol>
+  <li><strong>0–15 miles:</strong> Included (baked into hourly rate)</li>
+  <li><strong>15–30 miles:</strong> $35–$50 flat trip fee</li>
+  <li><strong>30+ miles:</strong> $1.00/mile round trip <em>or</em> bill drive time at $35–$45/hr (half rate)</li>
+  <li><strong>Emergency / same-day:</strong> Add $50–$100 surcharge</li>
+  <li><strong>Always enforce a minimum:</strong> $95–$125 minimum, even for a 10-minute job</li>
+</ol>
+
+<h2>Rules of Thumb</h2>
+<ul>
+  <li><strong>IRS mileage rate for 2026:</strong> ~$0.70/mile — that's your cost <em>floor</em>, not what you charge. Charge 1.5–2× that to cover wear, time, and gas.</li>
+  <li><strong>Disclose travel fees upfront</strong> on your quote — surprise travel charges are the #1 complaint in handyman reviews.</li>
+  <li><strong>Bundle visits</strong> in the same area on the same day to avoid eating travel costs.</li>
+  <li>For repeat customers within your service zone, keep it free — loyalty is worth more than $25.</li>
+</ul>
+
+<div class="bottom-line">
+  <strong>Bottom line:</strong> Include travel within ~15 miles, charge $35–$50 flat beyond that, and never leave the driveway for less than your $95+ minimum.
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: COMMERCIAL PAINTING                                -->
+<!-- ============================================================ -->
+<h1>Commercial Painting Rates</h1>
+
+<p>Commercial painting runs <strong>20–40% higher than residential</strong> due to scale, insurance, scheduling (nights/weekends), and code requirements.</p>
+
+<h2>Pricing Methods</h2>
+<table>
+  <thead>
+    <tr><th>Method</th><th>Typical Range</th><th>Best For</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Per square foot (wall area)</td><td class="rate">$1.50–$4.50/sq ft</td><td>Standard interiors</td></tr>
+    <tr><td>Per square foot (floor area)</td><td class="rate">$3–$7/sq ft</td><td>Quick estimates</td></tr>
+    <tr><td>Hourly rate (per painter)</td><td class="rate">$55–$95/hr</td><td>T&amp;M jobs, touch-ups</td></tr>
+    <tr><td>Crew day rate</td><td class="rate">$1,800–$3,500/day (3–4 painters)</td><td>Mid-size projects</td></tr>
+    <tr><td>Per linear foot (trim/baseboard)</td><td class="rate">$1.50–$4/lf</td><td>Detail work</td></tr>
+  </tbody>
+</table>
+
+<h2>By Project Type</h2>
+<table>
+  <thead>
+    <tr><th>Project</th><th>Rate</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Office interior</td><td class="rate">$2–$4/sq ft</td><td>Low-VOC paint, after-hours premium</td></tr>
+    <tr><td>Retail storefront</td><td class="rate">$3–$6/sq ft</td><td>Often night work, +20%</td></tr>
+    <tr><td>Warehouse / industrial</td><td class="rate">$0.80–$2/sq ft</td><td>High walls = lift/scaffold fees</td></tr>
+    <tr><td>Restaurant</td><td class="rate">$3–$5/sq ft</td><td>FDA-compliant coatings extra</td></tr>
+    <tr><td>Medical / clinic</td><td class="rate">$4–$7/sq ft</td><td>Antimicrobial paint, strict scheduling</td></tr>
+    <tr><td>Hotel (per room)</td><td class="rate">$400–$900/room</td><td>Volume discount on 50+ rooms</td></tr>
+    <tr><td>Apartment turnover</td><td class="rate">$350–$750/unit</td><td>Standard 1BR, 2-coat</td></tr>
+    <tr><td>Exterior commercial building</td><td class="rate">$2.50–$6/sq ft</td><td>Includes prep, primer</td></tr>
+    <tr><td>Parking garage striping</td><td class="rate">$4–$8/linear ft</td><td>Specialty equipment</td></tr>
+    <tr><td>Epoxy floor coating</td><td class="rate">$5–$12/sq ft</td><td>Industrial / garage</td></tr>
+  </tbody>
+</table>
+
+<h2>Markup Structure</h2>
+<p>A healthy commercial painting bid breaks down roughly:</p>
+<ul>
+  <li><strong>Labor:</strong> 40–50%</li>
+  <li><strong>Materials:</strong> 15–20%</li>
+  <li><strong>Overhead</strong> (insurance, vehicles, equipment): 15–20%</li>
+  <li><strong>Profit margin:</strong> 15–25% (aim for 20%+)</li>
+</ul>
+
+<h2>Premium Charges (add to base rate)</h2>
+<table>
+  <thead>
+    <tr><th>Condition</th><th>Surcharge</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>After-hours / weekend work</td><td class="rate">+25–40%</td></tr>
+    <tr><td>Heights over 12 ft (lift/scaffold)</td><td class="rate">+$300–$800/day equipment</td></tr>
+    <tr><td>Lead paint remediation</td><td class="rate">+$8–$15/sq ft</td></tr>
+    <tr><td>Multi-color or accent walls</td><td class="rate">+$0.50–$1/sq ft</td></tr>
+    <tr><td>Specialty finishes (faux, metallic, epoxy)</td><td class="rate">+50–100%</td></tr>
+    <tr><td>Rush job (under 7 days)</td><td class="rate">+15–25%</td></tr>
+    <tr><td>Union / prevailing wage projects</td><td class="rate">+30–60%</td></tr>
+    <tr><td>LEED-certified / low-VOC requirements</td><td class="rate">+10–15%</td></tr>
+  </tbody>
+</table>
+
+<h2>Minimums &amp; Fees</h2>
+<ul>
+  <li><strong>Job minimum:</strong> $500–$1,500 (don't show up for less)</li>
+  <li><strong>Mobilization fee:</strong> $250–$750 for out-of-town jobs</li>
+  <li><strong>Estimate / consultation:</strong> Free for jobs &gt; $2K; $150–$300 for small bids</li>
+  <li><strong>Color consultation:</strong> $75–$150/hr if not included</li>
+</ul>
+
+<h2>Rules of Thumb</h2>
+<ul>
+  <li><strong>Bid by the square foot, sell by the project</strong> — clients want one number, not a calculator.</li>
+  <li><strong>Always include 2 coats</strong> in the base price; single-coat is a red flag in commercial work.</li>
+  <li><strong>Material markup:</strong> 25–50% on paint and supplies.</li>
+  <li><strong>Bond + insurance</strong> required on most commercial jobs &gt; $10K (factor 2–4% of contract value).</li>
+  <li><strong>Net 30 payment terms</strong> are standard — price in 1.5–2% for cash flow cost.</li>
+  <li><strong>Walk every job before quoting</strong> — square footage from blueprints lies.</li>
+</ul>
+
+<h2>Example Bid — 10,000 sq ft Office Interior</h2>
+<table>
+  <thead>
+    <tr><th>Line Item</th><th style="width:14rem;">Amount</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Walls (10,000 sq ft @ $2.75)</td><td class="rate">$27,500</td></tr>
+    <tr><td>Trim &amp; doors (1,200 lf @ $2.50)</td><td class="rate">$3,000</td></tr>
+    <tr><td>Materials (paint, supplies)</td><td class="rate">$4,500</td></tr>
+    <tr><td>After-hours premium (30%)</td><td class="rate">$9,150</td></tr>
+    <tr><td><strong>Total</strong></td><td class="rate"><strong>~$44,000</strong></td></tr>
+    <tr><td>Duration</td><td class="rate">8–12 days, 4-painter crew</td></tr>
+  </tbody>
+</table>
+
+<div class="bottom-line">
+  <strong>Bottom line:</strong> Commercial painters should target <strong>$2.50–$4.50/sq ft</strong> for most interior work, with a <strong>20%+ profit margin</strong> baked in, a hard <strong>$500 minimum</strong>, and <strong>never quote without a site walk</strong>.
+</div>
+
+<hr>
+
+<!-- ============================================================ -->
+<!-- SECTION 4: SQUARE vs STRIPE vs QUICKBOOKS                     -->
+<!-- ============================================================ -->
+<h1>Square vs. Stripe vs. QuickBooks</h1>
+
+<p>These three get lumped together but solve <strong>different problems</strong>. Many small businesses end up using all three.</p>
+
+<h2>At a Glance</h2>
+<table>
+  <thead>
+    <tr><th></th><th>Square</th><th>Stripe</th><th>QuickBooks</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Primary job</strong></td><td>Take payments in person</td><td>Take payments online (developer-built)</td><td>Bookkeeping &amp; accounting</td></tr>
+    <tr><td><strong>Best for</strong></td><td>Retail, restaurants, mobile services</td><td>Websites, apps, SaaS, marketplaces</td><td>Tracking income, expenses, taxes</td></tr>
+    <tr><td><strong>Hardware</strong></td><td>Card readers, registers, kiosks</td><td>None (software / API only)</td><td>None</td></tr>
+    <tr><td><strong>Has a POS?</strong></td><td>Yes (flagship product)</td><td>No (partners with POS apps)</td><td>Yes (QuickBooks POS, limited)</td></tr>
+    <tr><td><strong>Has accounting?</strong></td><td>Basic reports only</td><td>No</td><td>Yes (full general ledger)</td></tr>
+    <tr><td><strong>Needs a developer?</strong></td><td>No</td><td>Often yes</td><td>No</td></tr>
+  </tbody>
+</table>
+
+<h2>Square — <em>"I need to swipe cards and run a shop"</em></h2>
+<p>An all-in-one payments + lightweight business platform built for <strong>in-person</strong> transactions.</p>
+
+<h3>Strengths</h3>
+<ul>
+  <li>Free POS app + free magstripe reader to start</li>
+  <li>Hardware ecosystem: Square Reader, Terminal, Register, Kiosk</li>
+  <li>Built-in tools: appointments, invoices, payroll, gift cards, loyalty, basic inventory</li>
+  <li>Same-day or next-day deposits to your bank</li>
+  <li>No monthly fee on the basic plan</li>
+</ul>
+
+<h3>Fees (typical)</h3>
+<table>
+  <thead><tr><th>Transaction Type</th><th>Rate</th></tr></thead>
+  <tbody>
+    <tr><td>In-person swipe / tap / dip</td><td class="rate">2.6% + $0.10</td></tr>
+    <tr><td>Online</td><td class="rate">2.9% + $0.30</td></tr>
+    <tr><td>Keyed-in or invoices</td><td class="rate">3.5% + $0.15</td></tr>
+    <tr><td>Square Invoices via card</td><td class="rate">3.3% + $0.30</td></tr>
+  </tbody>
+</table>
+
+<h3>Weak spots</h3>
+<ul>
+  <li>Account holds / freezes are a well-known complaint</li>
+  <li>Limited international support</li>
+  <li>Reporting / accounting is shallow — most users still need QuickBooks</li>
+  <li>Not designed for complex subscription billing</li>
+</ul>
+
+<p><strong>Who picks Square:</strong> coffee shops, food trucks, salons, handymen, market vendors, anyone with a phone or iPad who needs to charge a customer standing in front of them.</p>
+
+<h2>Stripe — <em>"I need to charge cards from my website or app"</em></h2>
+<p>A <strong>developer-first payments platform</strong> for online businesses. Think of it as plumbing — powerful, programmable, mostly invisible to your customer.</p>
+
+<h3>Strengths</h3>
+<ul>
+  <li>Best-in-class APIs and developer docs</li>
+  <li>Sophisticated <strong>subscription billing</strong> (Stripe Billing) — proration, dunning, trials, metered usage</li>
+  <li>Global: 135+ currencies, local payment methods (SEPA, iDEAL, Alipay, etc.)</li>
+  <li>Marketplaces / platforms (Stripe Connect) — splitting payments to multiple sellers</li>
+  <li>Add-ons: Radar (fraud), Tax (sales tax), Atlas (company formation), Issuing (cards), Capital (loans)</li>
+  <li>Stripe Terminal exists for in-person, but it's an afterthought vs. Square</li>
+</ul>
+
+<h3>Fees (typical, US)</h3>
+<table>
+  <thead><tr><th>Transaction Type</th><th>Rate</th></tr></thead>
+  <tbody>
+    <tr><td>Online card</td><td class="rate">2.9% + $0.30</td></tr>
+    <tr><td>ACH direct debit</td><td class="rate">0.8% (capped at $5)</td></tr>
+    <tr><td>Subscription billing add-on</td><td class="rate">+0.5%</td></tr>
+    <tr><td>International cards</td><td class="rate">+1.5%</td></tr>
+    <tr><td>Currency conversion</td><td class="rate">+1%</td></tr>
+  </tbody>
+</table>
+
+<h3>Weak spots</h3>
+<ul>
+  <li>Built for developers — non-technical users hit a wall fast (mitigated by Stripe Payment Links, Checkout)</li>
+  <li>No real POS, no hardware ecosystem</li>
+  <li>No accounting features at all</li>
+  <li>Customer support is notoriously thin for small accounts</li>
+</ul>
+
+<p><strong>Who picks Stripe:</strong> SaaS companies, e-commerce sites, marketplaces, anyone with engineers, anyone selling subscriptions or operating internationally.</p>
+
+<h2>QuickBooks — <em>"I need to know what I earned, spent, and owe in taxes"</em></h2>
+<p><strong>Accounting software</strong> by Intuit. It doesn't process payments at its core (there's an add-on called QuickBooks Payments, but that's not why anyone buys it). It tracks the <strong>money</strong>.</p>
+
+<h3>Strengths</h3>
+<ul>
+  <li>Full general ledger / double-entry bookkeeping</li>
+  <li>Income &amp; expense categorization, P&amp;L, balance sheet, cash flow</li>
+  <li>Bank / credit card feeds — auto-imports transactions</li>
+  <li>Invoicing, bill pay, 1099 contractors, payroll (add-on)</li>
+  <li>Sales tax tracking, mileage tracking, receipt capture</li>
+  <li><strong>Every accountant and tax preparer knows it</strong> — easy to hand off at tax time</li>
+  <li>Integrates with Square, Stripe, Shopify, banks, etc.</li>
+</ul>
+
+<h3>Pricing (QuickBooks Online, 2026)</h3>
+<table>
+  <thead><tr><th>Plan</th><th>Monthly Cost</th></tr></thead>
+  <tbody>
+    <tr><td>Simple Start</td><td class="rate">~$35/mo</td></tr>
+    <tr><td>Essentials</td><td class="rate">~$65/mo</td></tr>
+    <tr><td>Plus</td><td class="rate">~$99/mo</td></tr>
+    <tr><td>Advanced</td><td class="rate">~$235/mo</td></tr>
+    <tr><td>Payroll add-on</td><td class="rate">+$50–$130/mo</td></tr>
+    <tr><td>QuickBooks Payments (card)</td><td class="rate">~2.99% + $0.25</td></tr>
+  </tbody>
+</table>
+
+<h3>Weak spots</h3>
+<ul>
+  <li>Subscription pricing has climbed steeply year over year</li>
+  <li>Learning curve for non-bookkeepers</li>
+  <li>"QuickBooks Payments" exists but is rarely the best processor</li>
+  <li>Desktop version is being phased out in favor of QuickBooks Online</li>
+</ul>
+
+<p><strong>Who picks QuickBooks:</strong> pretty much every US small business that has revenue. It's the <strong>default</strong> for bookkeeping.</p>
+
+<h2>How They Actually Fit Together</h2>
+<p>Most businesses use a <strong>stack</strong>, not one tool:</p>
+
+<pre class="diagram">
+┌──────────────────────┐    ┌──────────────────────┐
+│  Square (in-person)  │    │   Stripe (online)    │
+│   takes the money    │    │   takes the money    │
+└──────────┬───────────┘    └──────────┬───────────┘
+           │                           │
+           └──────────┬────────────────┘
+                      ▼
+          ┌──────────────────────┐
+          │     QuickBooks       │
+          │   tracks the money   │
+          │   (books &amp; taxes)    │
+          └──────────────────────┘
+</pre>
+
+<ul>
+  <li><strong>Square and Stripe</strong> answer: <em>"How do I get paid?"</em></li>
+  <li><strong>QuickBooks</strong> answers: <em>"What just happened to my finances, and what do I owe?"</em></li>
+</ul>
+
+<h2>Which Should You Use?</h2>
+<table>
+  <thead>
+    <tr><th>Your Situation</th><th>Recommended Stack</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Handyman, painter, plumber — mostly in-person, some invoices</td><td><strong>Square + QuickBooks</strong></td></tr>
+    <tr><td>E-commerce store on Shopify / WooCommerce</td><td><strong>Stripe (or Shopify Payments) + QuickBooks</strong></td></tr>
+    <tr><td>SaaS or subscription product</td><td><strong>Stripe + QuickBooks</strong></td></tr>
+    <tr><td>Brick-and-mortar retail with a small website</td><td><strong>Square (for both) + QuickBooks</strong></td></tr>
+    <tr><td>Marketplace paying out to sellers</td><td><strong>Stripe Connect + QuickBooks</strong></td></tr>
+    <tr><td>Just starting, $0 revenue</td><td>Square (free) for payments; <strong>wait on QuickBooks</strong> until you have transactions to track</td></tr>
+  </tbody>
+</table>
+
+<div class="bottom-line">
+  <strong>Rule of thumb:</strong> Pick a payment processor based on <strong>where your customers transact</strong> (in-person → Square, online → Stripe), then pipe everything into QuickBooks so your accountant doesn't quit at tax time.
+</div>
+
+</body>
+</html>

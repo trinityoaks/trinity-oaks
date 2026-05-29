@@ -1,0 +1,226 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Trinity Oaks Construction Winston-Salem, NC" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e5]:
+          - text: Trinity Oaks Construction
+          - generic [ref=e6]: Winston-Salem, NC
+      - navigation [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Home" [ref=e10] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e11]:
+            - link "Services" [ref=e12] [cursor=pointer]:
+              - /url: services.html
+          - listitem [ref=e13]:
+            - link "Rates" [ref=e14] [cursor=pointer]:
+              - /url: rates.html
+          - listitem [ref=e15]:
+            - link "Projects" [ref=e16] [cursor=pointer]:
+              - /url: projects.html
+          - listitem [ref=e17]:
+            - link "About" [ref=e18] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e19]:
+            - link "Get a Quote" [ref=e20] [cursor=pointer]:
+              - /url: contact.html
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - heading "Service Rates" [level=1] [ref=e24]
+      - paragraph [ref=e25]:
+        - link "Home" [ref=e26] [cursor=pointer]:
+          - /url: index.html
+        - text: › Rates
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: Honest Pricing
+        - heading "What You Can Expect to Pay" [level=2] [ref=e31]
+        - paragraph [ref=e32]:
+          - text: Below are typical rate ranges for our small-job and handyman services. Larger projects (additions, remodels, custom homes) are quoted on a per-project basis —
+          - link "request a free estimate" [ref=e33] [cursor=pointer]:
+            - /url: contact.html
+          - text: .
+      - generic [ref=e34]:
+        - heading "Handyman & Small-Job Services" [level=2] [ref=e35]
+        - paragraph [ref=e36]: "Materials billed separately unless noted. Minimum service call: $95–$125."
+        - table [ref=e37]:
+          - rowgroup [ref=e38]:
+            - row "# Service Rate" [ref=e39]:
+              - columnheader "#" [ref=e40]
+              - columnheader "Service" [ref=e41]
+              - columnheader "Rate" [ref=e42]
+          - rowgroup [ref=e43]:
+            - row "1 General hourly labor $65–$95/hr" [ref=e44]:
+              - cell "1" [ref=e45]
+              - cell "General hourly labor" [ref=e46]
+              - cell "$65–$95/hr" [ref=e47]
+            - row "2 TV wall mounting (up to 65\") $150–$250 flat" [ref=e48]:
+              - cell "2" [ref=e49]
+              - cell "TV wall mounting (up to 65\")" [ref=e50]
+              - cell "$150–$250 flat" [ref=e51]
+            - row "3 Ceiling fan install/replace $125–$200 per fan" [ref=e52]:
+              - cell "3" [ref=e53]
+              - cell "Ceiling fan install/replace" [ref=e54]
+              - cell "$125–$200 per fan" [ref=e55]
+            - row "4 Light fixture replacement $75–$150 per fixture" [ref=e56]:
+              - cell "4" [ref=e57]
+              - cell "Light fixture replacement" [ref=e58]
+              - cell "$75–$150 per fixture" [ref=e59]
+            - row "5 Interior door install (pre-hung) $150–$300 per door" [ref=e60]:
+              - cell "5" [ref=e61]
+              - cell "Interior door install (pre-hung)" [ref=e62]
+              - cell "$150–$300 per door" [ref=e63]
+            - row "6 Door lock / deadbolt replacement $60–$120 per lock" [ref=e64]:
+              - cell "6" [ref=e65]
+              - cell "Door lock / deadbolt replacement" [ref=e66]
+              - cell "$60–$120 per lock" [ref=e67]
+            - row "7 Drywall patch (hole ≤ 12\") $100–$250 per patch" [ref=e68]:
+              - cell "7" [ref=e69]
+              - cell "Drywall patch (hole ≤ 12\")" [ref=e70]
+              - cell "$100–$250 per patch" [ref=e71]
+            - row "8 Interior painting $1.50–$3.50/sq ft" [ref=e72]:
+              - cell "8" [ref=e73]
+              - cell "Interior painting" [ref=e74]
+              - cell "$1.50–$3.50/sq ft" [ref=e75]
+            - row "9 Faucet replacement (kitchen/bath) $150–$275 per faucet" [ref=e76]:
+              - cell "9" [ref=e77]
+              - cell "Faucet replacement (kitchen/bath)" [ref=e78]
+              - cell "$150–$275 per faucet" [ref=e79]
+            - row "10 Toilet replacement $200–$400 per toilet" [ref=e80]:
+              - cell "10" [ref=e81]
+              - cell "Toilet replacement" [ref=e82]
+              - cell "$200–$400 per toilet" [ref=e83]
+            - row "11 Garbage disposal install $150–$250" [ref=e84]:
+              - cell "11" [ref=e85]
+              - cell "Garbage disposal install" [ref=e86]
+              - cell "$150–$250" [ref=e87]
+            - row "12 Caulking (tub, sink, windows) $8–$15/lf, $125 min" [ref=e88]:
+              - cell "12" [ref=e89]
+              - cell "Caulking (tub, sink, windows)" [ref=e90]
+              - cell "$8–$15/lf, $125 min" [ref=e91]
+            - row "13 Furniture / IKEA assembly $50–$80/hr" [ref=e92]:
+              - cell "13" [ref=e93]
+              - cell "Furniture / IKEA assembly" [ref=e94]
+              - cell "$50–$80/hr" [ref=e95]
+            - row "14 Picture / shelf / mirror hanging $50–$100 per item" [ref=e96]:
+              - cell "14" [ref=e97]
+              - cell "Picture / shelf / mirror hanging" [ref=e98]
+              - cell "$50–$100 per item" [ref=e99]
+            - row "15 Smart thermostat install $100–$175" [ref=e100]:
+              - cell "15" [ref=e101]
+              - cell "Smart thermostat install" [ref=e102]
+              - cell "$100–$175" [ref=e103]
+            - row "16 Gutter cleaning (single story) $125–$200 per house" [ref=e104]:
+              - cell "16" [ref=e105]
+              - cell "Gutter cleaning (single story)" [ref=e106]
+              - cell "$125–$200 per house" [ref=e107]
+            - row "17 Pressure washing (driveway/deck) $0.30–$0.50/sq ft" [ref=e108]:
+              - cell "17" [ref=e109]
+              - cell "Pressure washing (driveway/deck)" [ref=e110]
+              - cell "$0.30–$0.50/sq ft" [ref=e111]
+            - row "18 Deck board / railing repair $75–$150 per board" [ref=e112]:
+              - cell "18" [ref=e113]
+              - cell "Deck board / railing repair" [ref=e114]
+              - cell "$75–$150 per board" [ref=e115]
+            - row "19 Tile repair / regrouting (small area) $200–$450 per job" [ref=e116]:
+              - cell "19" [ref=e117]
+              - cell "Tile repair / regrouting (small area)" [ref=e118]
+              - cell "$200–$450 per job" [ref=e119]
+            - row "20 Weather stripping / door sweep $60–$120 per door" [ref=e120]:
+              - cell "20" [ref=e121]
+              - cell "Weather stripping / door sweep" [ref=e122]
+              - cell "$60–$120 per door" [ref=e123]
+        - generic [ref=e124]:
+          - heading "Bundled Rates" [level=3] [ref=e125]
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - strong [ref=e128]: "Half-day rate:"
+              - text: $300–$400 (up to 4 hours of small tasks)
+            - listitem [ref=e129]:
+              - strong [ref=e130]: "Full-day rate:"
+              - text: $600–$800 (full day on your punch list)
+            - listitem [ref=e131]:
+              - strong [ref=e132]: "Materials:"
+              - text: Billed at cost +15–25% if we supply them.
+      - generic [ref=e133]:
+        - heading "Travel & Trip Fees" [level=2] [ref=e134]
+        - paragraph [ref=e135]: Travel within our local service area is included. Beyond that, we keep it simple and transparent.
+        - table [ref=e136]:
+          - rowgroup [ref=e137]:
+            - row "# Distance Charge" [ref=e138]:
+              - columnheader "#" [ref=e139]
+              - columnheader "Distance" [ref=e140]
+              - columnheader "Charge" [ref=e141]
+          - rowgroup [ref=e142]:
+            - row "1 0–15 miles from Winston-Salem Included" [ref=e143]:
+              - cell "1" [ref=e144]
+              - cell "0–15 miles from Winston-Salem" [ref=e145]
+              - cell "Included" [ref=e146]
+            - row "2 15–30 miles $35–$50 flat trip fee" [ref=e147]:
+              - cell "2" [ref=e148]
+              - cell "15–30 miles" [ref=e149]
+              - cell "$35–$50 flat trip fee" [ref=e150]
+            - row "3 30+ miles $1.00/mile round trip" [ref=e151]:
+              - cell "3" [ref=e152]
+              - cell "30+ miles" [ref=e153]
+              - cell "$1.00/mile round trip" [ref=e154]
+            - row "4 Emergency / same-day service +$50–$100 surcharge" [ref=e155]:
+              - cell "4" [ref=e156]
+              - cell "Emergency / same-day service" [ref=e157]
+              - cell "+$50–$100 surcharge" [ref=e158]
+            - row "5 Minimum service call $95–$125" [ref=e159]:
+              - cell "5" [ref=e160]
+              - cell "Minimum service call" [ref=e161]
+              - cell "$95–$125" [ref=e162]
+        - generic [ref=e163]:
+          - heading "Notes" [level=3] [ref=e164]
+          - list [ref=e165]:
+            - listitem [ref=e166]: Travel fees are always disclosed upfront on the written quote.
+            - listitem [ref=e167]: Repeat customers inside the local zone keep complimentary travel.
+            - listitem [ref=e168]: When we can bundle multiple jobs in the same area on the same day, we waive the trip fee.
+      - paragraph [ref=e169]: Rates reflect 2026 regional averages and may vary based on scope, materials, and site conditions. All work is quoted in writing before it starts.
+    - generic [ref=e171]:
+      - heading "Need Something Not Listed?" [level=2] [ref=e172]
+      - paragraph [ref=e173]: If your project isn't on this list, ask — we likely do it. We'll give you a fair, written quote.
+      - link "Request a Free Estimate" [ref=e174] [cursor=pointer]:
+        - /url: contact.html
+  - contentinfo [ref=e175]:
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - heading "Trinity Oaks Construction" [level=4] [ref=e179]
+          - paragraph [ref=e180]: A locally-owned general contractor building homes, additions, and renovations across the Triad.
+        - generic [ref=e181]:
+          - heading "Services" [level=4] [ref=e182]
+          - link "Custom Homes" [ref=e183] [cursor=pointer]:
+            - /url: services.html#custom-homes
+          - link "Additions" [ref=e184] [cursor=pointer]:
+            - /url: services.html#additions
+          - link "Kitchen Remodels" [ref=e185] [cursor=pointer]:
+            - /url: services.html#kitchen
+          - link "Bath Remodels" [ref=e186] [cursor=pointer]:
+            - /url: services.html#bath
+          - link "Decks & Outdoor" [ref=e187] [cursor=pointer]:
+            - /url: services.html#decks
+          - link "Service Rates" [ref=e188] [cursor=pointer]:
+            - /url: rates.html
+        - generic [ref=e189]:
+          - heading "Company" [level=4] [ref=e190]
+          - link "About" [ref=e191] [cursor=pointer]:
+            - /url: about.html
+          - link "Projects" [ref=e192] [cursor=pointer]:
+            - /url: projects.html
+          - link "Contact" [ref=e193] [cursor=pointer]:
+            - /url: contact.html
+        - generic [ref=e194]:
+          - heading "Contact" [level=4] [ref=e195]
+          - link "336-978-4041" [ref=e196] [cursor=pointer]:
+            - /url: tel:+13369784041
+          - link "info@trinityoaksconstruction.com" [ref=e197] [cursor=pointer]:
+            - /url: mailto:info@trinityoaksconstruction.com
+          - paragraph [ref=e198]:
+            - text: Winston-Salem, NC
+            - text: "Mon–Fri: 7a–6p"
+      - generic [ref=e199]: © 2026 Trinity Oaks Construction Company, LLC. All rights reserved.

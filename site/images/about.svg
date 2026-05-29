@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4b99a"/>
+      <stop offset="100%" stop-color="#8b6a3f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg2)"/>
+  <!-- Ground -->
+  <rect y="450" width="800" height="150" fill="#5a3825"/>
+  <!-- Hand-drawn style house -->
+  <g stroke="#2c1810" stroke-width="4" fill="#f4ede1">
+    <polygon points="400,140 200,300 600,300"/>
+    <rect x="220" y="300" width="360" height="160"/>
+    <rect x="350" y="360" width="100" height="100" fill="#5a3825"/>
+    <rect x="260" y="340" width="60" height="60" fill="#8ba88a"/>
+    <rect x="480" y="340" width="60" height="60" fill="#8ba88a"/>
+    <line x1="260" y1="370" x2="320" y2="370"/>
+    <line x1="290" y1="340" x2="290" y2="400"/>
+    <line x1="480" y1="370" x2="540" y2="370"/>
+    <line x1="510" y1="340" x2="510" y2="400"/>
+  </g>
+  <!-- Oak tree -->
+  <g transform="translate(680 470)">
+    <rect x="-10" y="-70" width="20" height="70" fill="#2c1810"/>
+    <circle cx="0" cy="-100" r="70" fill="#4a6741"/>
+    <circle cx="-30" cy="-90" r="40" fill="#344a2f"/>
+    <circle cx="30" cy="-80" r="45" fill="#5a7048"/>
+  </g>
+  <g transform="translate(120 480)">
+    <rect x="-8" y="-50" width="16" height="50" fill="#2c1810"/>
+    <circle cx="0" cy="-75" r="50" fill="#4a6741"/>
+  </g>
+</svg>

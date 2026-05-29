@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Rates | Trinity Oaks Construction Company</title>
+  <meta name="description" content="Suggested rates for handyman and small-job services from Trinity Oaks Construction Company. Honest pricing, no surprises. Winston-Salem, NC.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1rem 0 2rem;
+    }
+    .rate-table th, .rate-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .rate-table thead th {
+      background: var(--oak-leaf-dark);
+      color: var(--cream);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-bottom: 0;
+    }
+    .rate-table tbody tr:nth-child(odd) td { background: var(--sand); }
+    .rate-table tbody tr:hover td { background: #ede4cf; }
+    .rate-table td.num {
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      font-weight: 600;
+      color: var(--oak-bark);
+    }
+    .rate-table td:first-child {
+      width: 3rem;
+      text-align: center;
+      color: var(--stone);
+      font-weight: 600;
+    }
+    .rate-notes {
+      background: var(--sand);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+    }
+    .rate-notes h3 { color: var(--oak-dark); margin-bottom: 0.75rem; }
+    .rate-notes ul { padding-left: 1.2rem; }
+    .rate-notes li { margin-bottom: 0.4rem; color: var(--ink); }
+    .rate-section { margin-bottom: 3rem; }
+    .rate-section > h2 { color: var(--oak-dark); margin-bottom: 0.5rem; }
+    .rate-section > p.lead { color: var(--stone); margin-bottom: 1.5rem; }
+    @media (max-width: 600px) {
+      .rate-table { font-size: 0.92rem; }
+      .rate-table th, .rate-table td { padding: 0.6rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="images/logo.svg" alt="">
+        <span class="brand-text">
+          Trinity Oaks Construction
+          <small>Winston-Salem, NC</small>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rates.html" class="active">Rates</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div>
+        <h1>Service Rates</h1>
+        <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Rates</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Honest Pricing</span>
+          <h2>What You Can Expect to Pay</h2>
+          <p>Below are typical rate ranges for our small-job and handyman services. Larger projects (additions, remodels, custom homes) are quoted on a per-project basis &mdash; <a href="contact.html">request a free estimate</a>.</p>
+        </div>
+
+        <div class="rate-section">
+          <h2>Handyman &amp; Small-Job Services</h2>
+          <p class="lead">Materials billed separately unless noted. Minimum service call: $95&ndash;$125.</p>
+          <table class="rate-table">
+            <thead>
+              <tr><th>#</th><th>Service</th><th>Rate</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>General hourly labor</td><td class="num">$65&ndash;$95/hr</td></tr>
+              <tr><td>2</td><td>TV wall mounting (up to 65")</td><td class="num">$150&ndash;$250 flat</td></tr>
+              <tr><td>3</td><td>Ceiling fan install/replace</td><td class="num">$125&ndash;$200 per fan</td></tr>
+              <tr><td>4</td><td>Light fixture replacement</td><td class="num">$75&ndash;$150 per fixture</td></tr>
+              <tr><td>5</td><td>Interior door install (pre-hung)</td><td class="num">$150&ndash;$300 per door</td></tr>
+              <tr><td>6</td><td>Door lock / deadbolt replacement</td><td class="num">$60&ndash;$120 per lock</td></tr>
+              <tr><td>7</td><td>Drywall patch (hole &le; 12")</td><td class="num">$100&ndash;$250 per patch</td></tr>
+              <tr><td>8</td><td>Interior painting</td><td class="num">$1.50&ndash;$3.50/sq ft</td></tr>
+              <tr><td>9</td><td>Faucet replacement (kitchen/bath)</td><td class="num">$150&ndash;$275 per faucet</td></tr>
+              <tr><td>10</td><td>Toilet replacement</td><td class="num">$200&ndash;$400 per toilet</td></tr>
+              <tr><td>11</td><td>Garbage disposal install</td><td class="num">$150&ndash;$250</td></tr>
+              <tr><td>12</td><td>Caulking (tub, sink, windows)</td><td class="num">$8&ndash;$15/lf, $125 min</td></tr>
+              <tr><td>13</td><td>Furniture / IKEA assembly</td><td class="num">$50&ndash;$80/hr</td></tr>
+              <tr><td>14</td><td>Picture / shelf / mirror hanging</td><td class="num">$50&ndash;$100 per item</td></tr>
+              <tr><td>15</td><td>Smart thermostat install</td><td class="num">$100&ndash;$175</td></tr>
+              <tr><td>16</td><td>Gutter cleaning (single story)</td><td class="num">$125&ndash;$200 per house</td></tr>
+              <tr><td>17</td><td>Pressure washing (driveway/deck)</td><td class="num">$0.30&ndash;$0.50/sq ft</td></tr>
+              <tr><td>18</td><td>Deck board / railing repair</td><td class="num">$75&ndash;$150 per board</td></tr>
+              <tr><td>19</td><td>Tile repair / regrouting (small area)</td><td class="num">$200&ndash;$450 per job</td></tr>
+              <tr><td>20</td><td>Weather stripping / door sweep</td><td class="num">$60&ndash;$120 per door</td></tr>
+            </tbody>
+          </table>
+
+          <div class="rate-notes">
+            <h3>Bundled Rates</h3>
+            <ul>
+              <li><strong>Half-day rate:</strong> $300&ndash;$400 (up to 4 hours of small tasks)</li>
+              <li><strong>Full-day rate:</strong> $600&ndash;$800 (full day on your punch list)</li>
+              <li><strong>Materials:</strong> Billed at cost +15&ndash;25% if we supply them.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rate-section">
+          <h2>Travel &amp; Trip Fees</h2>
+          <p class="lead">Travel within our local service area is included. Beyond that, we keep it simple and transparent.</p>
+          <table class="rate-table">
+            <thead>
+              <tr><th>#</th><th>Distance</th><th>Charge</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>0&ndash;15 miles from Winston-Salem</td><td class="num">Included</td></tr>
+              <tr><td>2</td><td>15&ndash;30 miles</td><td class="num">$35&ndash;$50 flat trip fee</td></tr>
+              <tr><td>3</td><td>30+ miles</td><td class="num">$1.00/mile round trip</td></tr>
+              <tr><td>4</td><td>Emergency / same-day service</td><td class="num">+$50&ndash;$100 surcharge</td></tr>
+              <tr><td>5</td><td>Minimum service call</td><td class="num">$95&ndash;$125</td></tr>
+            </tbody>
+          </table>
+          <div class="rate-notes">
+            <h3>Notes</h3>
+            <ul>
+              <li>Travel fees are always disclosed upfront on the written quote.</li>
+              <li>Repeat customers inside the local zone keep complimentary travel.</li>
+              <li>When we can bundle multiple jobs in the same area on the same day, we waive the trip fee.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="text-align:center; color:var(--stone); font-size:0.9rem; margin-top:2rem;">
+          Rates reflect 2026 regional averages and may vary based on scope, materials, and site conditions. All work is quoted in writing before it starts.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <h2>Need Something Not Listed?</h2>
+        <p>If your project isn't on this list, ask &mdash; we likely do it. We'll give you a fair, written quote.</p>
+        <a href="contact.html" class="btn btn-primary">Request a Free Estimate</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Trinity Oaks Construction</h4>
+          <p>A locally-owned general contractor building homes, additions, and renovations across the Triad.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="services.html#custom-homes">Custom Homes</a>
+          <a href="services.html#additions">Additions</a>
+          <a href="services.html#kitchen">Kitchen Remodels</a>
+          <a href="services.html#bath">Bath Remodels</a>
+          <a href="services.html#decks">Decks &amp; Outdoor</a>
+          <a href="rates.html">Service Rates</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+13369784041">336-978-4041</a>
+          <a href="mailto:info@trinityoaksconstruction.com">info@trinityoaksconstruction.com</a>
+          <p style="color:#a8a8a8;margin-top:0.5rem;">Winston-Salem, NC<br>Mon&ndash;Fri: 7a&ndash;6p</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> Trinity Oaks Construction Company, LLC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

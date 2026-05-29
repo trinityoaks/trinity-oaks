@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>trinity-oaks.com — Complete Setup Guide</title>
+<style>
+  :root {
+    --oak: #6b4423;
+    --sand: #f4ead5;
+    --leaf: #4a6741;
+    --ink: #2a2a2a;
+    --muted: #666;
+    --line: #d9cfb8;
+    --code-bg: #f7f3e8;
+    --warn: #b3541e;
+    --good: #2f6b2f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    color: var(--ink);
+    line-height: 1.6;
+    background: #fffdf8;
+  }
+  h1 {
+    color: var(--oak);
+    border-bottom: 3px solid var(--leaf);
+    padding-bottom: 12px;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+  h2 {
+    color: var(--leaf);
+    margin-top: 44px;
+    border-left: 4px solid var(--oak);
+    padding-left: 12px;
+    font-size: 1.45em;
+  }
+  h3 {
+    color: var(--oak);
+    margin-top: 28px;
+    font-size: 1.15em;
+  }
+  h4 {
+    color: var(--ink);
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 1em;
+    font-style: italic;
+  }
+  .verdict {
+    background: var(--sand);
+    border-left: 5px solid var(--oak);
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: 4px;
+  }
+  .verdict strong { color: var(--oak); }
+  code, pre {
+    font-family: Consolas, Monaco, monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+  code { padding: 2px 6px; font-size: 0.92em; }
+  pre {
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 0.86em;
+    line-height: 1.45;
+    background: #1e1e1e;
+    color: #e8e8d0;
+    border-color: #1e1e1e;
+  }
+  pre code { background: transparent; border: none; color: inherit; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    font-size: 0.95em;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--sand);
+    color: var(--oak);
+  }
+  ul, ol { padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  ol ol, ol ul, ul ol, ul ul { margin-top: 6px; }
+  .note {
+    background: #fff7e6;
+    border-left: 4px solid var(--warn);
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 0.95em;
+  }
+  .tip {
+    background: #eef6ea;
+    border-left: 4px solid var(--good);
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 0.95em;
+  }
+  .ok { color: var(--good); font-weight: bold; }
+  .warn { color: var(--warn); font-weight: bold; }
+  .footer {
+    margin-top: 60px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85em;
+  }
+  .toc {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 16px 24px;
+    margin: 24px 0 32px;
+  }
+  .toc h3 { margin-top: 0; }
+  .toc ol { margin-bottom: 0; }
+  .stack-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .stack-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .stack-card h4 {
+    margin-top: 0;
+    color: var(--oak);
+    font-style: normal;
+  }
+  .stack-card.recommended {
+    border-color: var(--leaf);
+    border-width: 2px;
+    background: #f7faf4;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--leaf);
+    color: white;
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+  }
+  @media (max-width: 600px) {
+    .stack-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>trinity-oaks.com — Complete Setup Guide</h1>
+<p class="subtitle">GitHub for the code, Cloudflare or Squarespace for hosting, Gmail (Google Workspace) for email. Step-by-step.</p>
+
+<div class="verdict">
+  <p><strong>What you&rsquo;ll have when you&rsquo;re done:</strong></p>
+  <ul style="margin-bottom:0;">
+    <li>A <strong>GitHub repository</strong> holding the source code (version control + backup).</li>
+    <li>The website live at <code>https://trinity-oaks.com</code> and <code>https://www.trinity-oaks.com</code> with automatic HTTPS.</li>
+    <li>Pushing a change to GitHub <strong>auto-deploys</strong> the site (if you choose Cloudflare).</li>
+    <li>A real Gmail inbox at <code>info@trinity-oaks.com</code> running on Google Workspace.</li>
+    <li>Proper SPF + DKIM + DMARC so outgoing mail doesn&rsquo;t hit spam.</li>
+  </ul>
+</div>
+
+<h2>Pick your hosting path</h2>
+<div class="stack-grid">
+  <div class="stack-card recommended">
+    <h4>Path A &mdash; GitHub + Cloudflare Pages <span class="badge">recommended</span></h4>
+    <p style="margin: 0 0 8px 0;"><strong>Cost:</strong> $0 hosting, $0 DNS. Domain renewal stays where it is.</p>
+    <p style="margin: 0 0 8px 0;"><strong>Best for:</strong> developer workflow, fast global CDN, free SSL, edit in code, auto-deploy on <code>git push</code>.</p>
+    <p style="margin: 0;"><strong>Tradeoff:</strong> the owner needs to edit HTML (or have you do it). No visual page builder.</p>
+  </div>
+  <div class="stack-card">
+    <h4>Path B &mdash; GitHub + Squarespace</h4>
+    <p style="margin: 0 0 8px 0;"><strong>Cost:</strong> Squarespace plan (~$16+/mo).</p>
+    <p style="margin: 0 0 8px 0;"><strong>Best for:</strong> the owner wants to edit pages visually in a browser.</p>
+    <p style="margin: 0;"><strong>Tradeoff:</strong> the HTML in this repo isn&rsquo;t what gets served &mdash; the Squarespace dashboard is the source of truth. The GitHub repo becomes a design reference / backup, not the live site.</p>
+  </div>
+</div>
+
+<p>The rest of this guide walks Path A in full, then shows what changes for Path B. Email setup (Section 4) is identical for both paths.</p>
+
+<div class="toc">
+  <h3>Table of contents</h3>
+  <ol>
+    <li><a href="#part1">Part 1 &mdash; Push the site to GitHub</a></li>
+    <li><a href="#part2a">Part 2A &mdash; Host on Cloudflare Pages (Path A)</a></li>
+    <li><a href="#part2b">Part 2B &mdash; Keep on Squarespace (Path B)</a></li>
+    <li><a href="#part3">Part 3 &mdash; Set up Gmail at @trinity-oaks.com (Google Workspace)</a></li>
+    <li><a href="#part4">Part 4 &mdash; Verification checklist</a></li>
+    <li><a href="#part5">Part 5 &mdash; Reference: every DNS record you should end up with</a></li>
+    <li><a href="#part6">Part 6 &mdash; Local dev setup: editor + AI &ldquo;vibe coding&rdquo; (Claude / Codex)</a></li>
+  </ol>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="part1">Part 1 &mdash; Push the site to GitHub</h2>
+
+<p>The project at <code>C:\Users\hgarza\Documents\project\handyman</code> is not yet a git repository. We&rsquo;ll initialize it, commit, and push to a new GitHub repo.</p>
+
+<h3>1.1  Install prerequisites (one-time)</h3>
+<ul>
+  <li><strong>Git for Windows</strong> &mdash; <code>https://git-scm.com/download/win</code>. After install, open a new PowerShell window so it picks up <code>git</code> on the PATH.</li>
+  <li><strong>GitHub account</strong> &mdash; sign up at <code>https://github.com/signup</code> if you don&rsquo;t have one. Pick a username you&rsquo;re happy seeing in URLs.</li>
+  <li><strong>GitHub CLI (optional but easier)</strong> &mdash; <code>https://cli.github.com</code>. Lets you create repos without clicking around the web UI.</li>
+</ul>
+
+<h3>1.2  Create a GitHub repository</h3>
+
+<h4>Option 1 &mdash; via the web</h4>
+<ol>
+  <li>Go to <code>https://github.com/new</code>.</li>
+  <li>Repository name: <code>trinity-oaks</code> (or <code>trinity-oaks-site</code>).</li>
+  <li>Visibility: <strong>Public</strong> is fine for marketing sites. Private also works (Cloudflare Pages supports both).</li>
+  <li>Do <strong>NOT</strong> check &ldquo;Add a README&rdquo; or &ldquo;Add .gitignore&rdquo; &mdash; the local folder already has files, and we want a clean push.</li>
+  <li>Click &ldquo;Create repository&rdquo;. Leave the page open &mdash; you&rsquo;ll need the <code>git remote add</code> command from it.</li>
+</ol>
+
+<h4>Option 2 &mdash; via the CLI (faster)</h4>
+<pre><code># From the project directory:
+gh auth login            # one-time, follow the browser prompts
+gh repo create trinity-oaks --public --source=. --remote=origin --push</code></pre>
+<p>If you use Option 2, you can skip steps 1.3 and 1.4 &mdash; the CLI initializes, commits, and pushes in one shot. The steps below cover Option 1.</p>
+
+<h3>1.3  Initialize git and commit the project</h3>
+<p>Open PowerShell at the project root:</p>
+<pre><code>cd C:\Users\hgarza\Documents\project\handyman
+
+git init
+git branch -M main
+
+# Tell git who you are (one-time setup if you've never used git on this machine)
+git config --global user.name  "Hector Garza"
+git config --global user.email "hectorg@smartxchain.com"
+
+# Optional but recommended &mdash; create a .gitignore so junk doesn't get committed
+@'
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+node_modules/
+'@ | Out-File -Encoding utf8 .gitignore
+
+git add .
+git commit -m "Initial commit: Trinity Oaks static site"</code></pre>
+
+<h3>1.4  Connect to GitHub and push</h3>
+<p>Copy the remote URL from the GitHub &ldquo;create repository&rdquo; page (it looks like <code>https://github.com/&lt;your-user&gt;/trinity-oaks.git</code>), then:</p>
+<pre><code>git remote add origin https://github.com/&lt;your-user&gt;/trinity-oaks.git
+git push -u origin main</code></pre>
+<p>GitHub will prompt you to authenticate the first time. Use a personal access token (paste it when prompted for &ldquo;password&rdquo;) or sign in via the browser if Git Credential Manager pops up.</p>
+
+<div class="tip">
+  <strong>From now on,</strong> any edit you make locally goes live with three commands:
+  <pre style="margin-top:10px;"><code>git add .
+git commit -m "Describe what changed"
+git push</code></pre>
+  Cloudflare Pages will detect the push and deploy in ~30 seconds.
+</div>
+
+<!-- ============================================================ -->
+<h2 id="part2a">Part 2A &mdash; Host on Cloudflare Pages (Path A, recommended)</h2>
+
+<p>Cloudflare Pages will build (well, just serve &mdash; there&rsquo;s no build step) the <code>site/</code> folder from GitHub, give it free HTTPS, and put it on a global CDN. Then we&rsquo;ll point <code>trinity-oaks.com</code> at it.</p>
+
+<h3>2A.1  Create a Cloudflare account</h3>
+<ol>
+  <li>Sign up at <code>https://dash.cloudflare.com/sign-up</code>.</li>
+  <li>Verify the email address Cloudflare sends.</li>
+</ol>
+
+<h3>2A.2  Create the Pages project</h3>
+<ol>
+  <li>In the Cloudflare dashboard, left sidebar: <strong>Workers &amp; Pages &rarr; Create &rarr; Pages &rarr; Connect to Git</strong>.</li>
+  <li>Authorize Cloudflare to read your GitHub repos. You can grant access to just the <code>trinity-oaks</code> repo (recommended) or all repos.</li>
+  <li>Select the <code>trinity-oaks</code> repository &rarr; <strong>Begin setup</strong>.</li>
+  <li>Configure the build:
+    <ul>
+      <li>Project name: <code>trinity-oaks</code> (this becomes <code>trinity-oaks.pages.dev</code>).</li>
+      <li>Production branch: <code>main</code>.</li>
+      <li>Framework preset: <strong>None</strong>.</li>
+      <li>Build command: <strong>leave blank</strong>.</li>
+      <li>Build output directory: <code>site</code> &nbsp;<span class="warn">(this is the important one)</span></li>
+      <li>Root directory: leave as <code>/</code>.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Save and Deploy</strong>. First deploy finishes in ~1 minute. You&rsquo;ll get a preview URL like <code>https://trinity-oaks.pages.dev</code>.</li>
+  <li><strong>Open it.</strong> Check the page renders, nav works, no console errors. Test at desktop and mobile widths (DevTools device toolbar).</li>
+</ol>
+
+<h3>2A.3  Point trinity-oaks.com at the Pages site</h3>
+
+<p>You have two sub-options here: move DNS to Cloudflare, or stay on the current DNS provider and just add a CNAME.</p>
+
+<h4>Option A (cleanest) &mdash; move DNS to Cloudflare</h4>
+<ol>
+  <li>Cloudflare dashboard &rarr; <strong>Add a Site</strong> &rarr; enter <code>trinity-oaks.com</code> &rarr; pick the <strong>Free</strong> plan.</li>
+  <li>Cloudflare scans existing DNS and shows you what it found. <strong>Review carefully</strong> &mdash; make sure it sees any records you want to keep (it won&rsquo;t see what doesn&rsquo;t exist, so any missing ones must be added by hand later).</li>
+  <li>Cloudflare gives you two nameservers, e.g. <code>kira.ns.cloudflare.com</code> and <code>walt.ns.cloudflare.com</code>.</li>
+  <li>Log into the current registrar (Squarespace Domains &mdash; the domain inherited from Google Domains): <strong>Settings &rarr; Domains &rarr; trinity-oaks.com &rarr; Nameservers</strong>. Choose &ldquo;Use custom nameservers&rdquo; and replace the existing <code>ns-cloud-c1&hellip;c4.googledomains.com</code> entries with the two Cloudflare nameservers.</li>
+  <li>Save. Nameserver changes typically propagate in 1&ndash;4 hours but can take up to 24.</li>
+  <li>Back in Cloudflare, in the <code>trinity-oaks.com</code> DNS panel, you&rsquo;ll add two records:
+    <table>
+      <tr><th>Type</th><th>Name</th><th>Content</th><th>Proxy</th></tr>
+      <tr><td>CNAME</td><td><code>@</code> (or <code>trinity-oaks.com</code>)</td><td><code>trinity-oaks.pages.dev</code></td><td>Proxied (orange cloud)</td></tr>
+      <tr><td>CNAME</td><td><code>www</code></td><td><code>trinity-oaks.pages.dev</code></td><td>Proxied (orange cloud)</td></tr>
+    </table>
+    Cloudflare auto-flattens the apex CNAME so this is allowed even though plain DNS wouldn&rsquo;t permit a CNAME on the root.
+  </li>
+  <li>In the Pages project: <strong>Custom domains &rarr; Set up a custom domain</strong>. Add <code>trinity-oaks.com</code> and then <code>www.trinity-oaks.com</code>. Cloudflare provisions an SSL certificate automatically (1&ndash;15 minutes).</li>
+  <li>Decide which is canonical. Recommended: redirect <code>www</code> &rarr; apex. In Cloudflare: <strong>Rules &rarr; Redirect Rules &rarr; Create</strong>:
+    <ul>
+      <li>If &ldquo;Hostname equals <code>www.trinity-oaks.com</code>&rdquo;</li>
+      <li>Then &ldquo;Static redirect&rdquo; to <code>https://trinity-oaks.com/$1</code> with status <code>301</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4>Option B &mdash; keep DNS at Squarespace, just add a CNAME</h4>
+<p>Simpler but you don&rsquo;t get Cloudflare&rsquo;s CDN/firewall on the apex (Squarespace doesn&rsquo;t support CNAME flattening for the root):</p>
+<ol>
+  <li>In Squarespace DNS settings, add: <code>CNAME www &rarr; trinity-oaks.pages.dev</code>.</li>
+  <li>For the apex <code>@</code>, set <code>A</code> records to Cloudflare Pages&rsquo; published IPs (Cloudflare lists them when you add the custom domain &mdash; currently <code>172.66.0.96</code> and <code>162.159.140.98</code>, but check the Pages docs at the time of setup, as these can change).</li>
+  <li>In Pages &rarr; Custom domains, add both <code>trinity-oaks.com</code> and <code>www.trinity-oaks.com</code>. SSL provisions automatically.</li>
+</ol>
+
+<div class="tip">
+  <strong>Recommendation:</strong> Option A (move DNS to Cloudflare). It&rsquo;s a one-time 5-minute change at the registrar, and afterwards everything &mdash; DNS, hosting, SSL, analytics, redirects &mdash; lives in one dashboard.
+</div>
+
+<!-- ============================================================ -->
+<h2 id="part2b">Part 2B &mdash; Keep on Squarespace (Path B)</h2>
+
+<p>If the owner wants to keep using the Squarespace visual editor, hosting is already done &mdash; you can skip this entire section. The GitHub repo remains as a backup of the design files and rate research, but it isn&rsquo;t connected to the live site.</p>
+
+<p>The only thing that changes versus the current state is:</p>
+<ul>
+  <li>You still do Part 1 (push to GitHub) for backup/version control.</li>
+  <li>You skip Part 2A entirely.</li>
+  <li>You still do Part 3 (email) &mdash; configured in the Squarespace DNS panel instead of Cloudflare.</li>
+</ul>
+
+<div class="note">
+  <strong>Caveat:</strong> Squarespace charges $16&ndash;$23/month for the website plan. If cost matters and the owner is comfortable with you updating copy on their behalf, Path A saves that recurring fee.
+</div>
+
+<!-- ============================================================ -->
+<h2 id="part3">Part 3 &mdash; Set up Gmail at @trinity-oaks.com (Google Workspace)</h2>
+
+<p>This works identically whether DNS lives at Cloudflare or Squarespace. Only the panel you use to add records changes.</p>
+
+<h3>3.1  Sign up for Google Workspace</h3>
+<ol>
+  <li>Go to <code>https://workspace.google.com</code> &rarr; <strong>Get started</strong>.</li>
+  <li>Enter business name (&ldquo;Trinity Oaks Construction Company&rdquo;), number of employees, and country (United States).</li>
+  <li>When asked &ldquo;Does your business have a domain?&rdquo; choose <strong>Yes</strong> and enter <code>trinity-oaks.com</code>.</li>
+  <li>Create the admin account &mdash; this becomes the first mailbox, e.g. <code>info@trinity-oaks.com</code> or <code>hector@trinity-oaks.com</code>.</li>
+  <li>Pick a plan. <strong>Business Starter</strong> ($7/user/month) is enough &mdash; 30 GB storage, custom email, Meet, Drive, Calendar, Docs. Upgrade later if you need more storage or shared drives.</li>
+  <li>Enter billing info. The first 14 days are free; cancel before then if you change your mind.</li>
+</ol>
+
+<h3>3.2  Verify domain ownership</h3>
+<p>Google needs to confirm you control <code>trinity-oaks.com</code>. It will give you a TXT record that looks like:</p>
+<pre><code>Type:  TXT
+Name:  @  (or trinity-oaks.com)
+Value: google-site-verification=AbCdEf1234567890_examplevalue</code></pre>
+<p>Add it:</p>
+<ul>
+  <li><strong>If DNS is on Cloudflare:</strong> Cloudflare dashboard &rarr; <code>trinity-oaks.com</code> &rarr; <strong>DNS &rarr; Records &rarr; Add record</strong>. Type TXT, name <code>@</code>, content = the value Google gave you, TTL Auto, Proxy off (DNS-only).</li>
+  <li><strong>If DNS is on Squarespace:</strong> Settings &rarr; Domains &rarr; <code>trinity-oaks.com</code> &rarr; DNS Settings &rarr; Add custom record. Same values.</li>
+</ul>
+<p>Back in the Workspace setup wizard, click <strong>Verify</strong>. Usually instant; can take up to an hour.</p>
+
+<h3>3.3  Add the MX records (so mail can be received)</h3>
+<p>Modern Google Workspace uses a single MX record (introduced in 2023). If the setup wizard shows you 5 legacy records (<code>aspmx.l.google.com</code> etc.), use those instead &mdash; both still work.</p>
+
+<table>
+  <tr><th>Type</th><th>Name</th><th>Priority</th><th>Value</th><th>TTL</th></tr>
+  <tr><td>MX</td><td><code>@</code></td><td>1</td><td><code>smtp.google.com</code></td><td>3600</td></tr>
+</table>
+
+<p><em>Legacy 5-record format (if Google asks for these instead):</em></p>
+<table>
+  <tr><th>Priority</th><th>Value</th></tr>
+  <tr><td>1</td><td><code>aspmx.l.google.com</code></td></tr>
+  <tr><td>5</td><td><code>alt1.aspmx.l.google.com</code></td></tr>
+  <tr><td>5</td><td><code>alt2.aspmx.l.google.com</code></td></tr>
+  <tr><td>10</td><td><code>alt3.aspmx.l.google.com</code></td></tr>
+  <tr><td>10</td><td><code>alt4.aspmx.l.google.com</code></td></tr>
+</table>
+
+<p><strong>Before saving, delete any other MX records that exist.</strong> If two MX setups fight for the same domain, mail goes nowhere.</p>
+
+<h3>3.4  Add SPF (so outgoing Gmail isn&rsquo;t flagged as spam)</h3>
+<p>Add one TXT record on the root:</p>
+<pre><code>Type:  TXT
+Name:  @
+Value: v=spf1 include:_spf.google.com ~all</code></pre>
+<p>If a TXT already exists on <code>@</code> with <code>v=spf1</code> in it (e.g. for Squarespace mail forwarding), merge them &mdash; never have two SPF records on the same name, that will silently break mail delivery.</p>
+
+<h3>3.5  Turn on DKIM (cryptographic signature on outgoing mail)</h3>
+<ol>
+  <li>Open the Workspace admin: <code>https://admin.google.com</code>.</li>
+  <li>Menu &rarr; <strong>Apps &rarr; Google Workspace &rarr; Gmail &rarr; Authenticate email</strong>.</li>
+  <li>Click <strong>Generate new record</strong> (2048-bit key, leave selector as <code>google</code>). Google shows you a TXT record that looks like:
+    <pre><code>Type:  TXT
+Name:  google._domainkey
+Value: v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEF... (long string)</code></pre>
+  </li>
+  <li>Add that TXT record at your DNS provider. <strong>Name field caveat:</strong> at Cloudflare, just enter <code>google._domainkey</code>; some providers want the fully-qualified <code>google._domainkey.trinity-oaks.com</code> &mdash; check what the panel expects.</li>
+  <li>Wait ~10 minutes, then click <strong>Start authentication</strong> in the admin panel. Status should switch to &ldquo;Authenticating email with DKIM&rdquo;.</li>
+</ol>
+
+<h3>3.6  Add DMARC (tells receivers what to do with mail that fails SPF/DKIM)</h3>
+<p>Start in &ldquo;none&rdquo; mode so you can monitor for a few weeks before tightening:</p>
+<pre><code>Type:  TXT
+Name:  _dmarc
+Value: v=DMARC1; p=none; rua=mailto:info@trinity-oaks.com; pct=100; adkim=s; aspf=s</code></pre>
+<p>After 2&ndash;4 weeks of clean reports, change <code>p=none</code> to <code>p=quarantine</code>, then later to <code>p=reject</code>.</p>
+
+<h3>3.7  Create the mailboxes you actually want</h3>
+<p>In <code>admin.google.com</code> &rarr; <strong>Directory &rarr; Users &rarr; Add new user</strong>. Common setups for a small construction business:</p>
+<ul>
+  <li><code>info@trinity-oaks.com</code> &mdash; public contact, what&rsquo;s on the website and business cards.</li>
+  <li><code>hector@trinity-oaks.com</code> &mdash; personal/owner.</li>
+  <li><code>estimates@trinity-oaks.com</code> &mdash; if you want a separate stream for estimate requests.</li>
+</ul>
+<p>Each <em>user</em> costs $7/month. If you want multiple addresses going to one inbox, use <strong>aliases</strong> instead (free): <strong>Directory &rarr; Users &rarr; (select user) &rarr; User information &rarr; Alternate emails</strong>.</p>
+
+<h3>3.8  Update the website + repo to use the new address</h3>
+<p>The current code uses the placeholder <code>info@trinityoaksconstruction.com</code>. Replace it site-wide with whatever you chose (likely <code>info@trinity-oaks.com</code>):</p>
+<ul>
+  <li>All 6 HTML files in <code>site/</code> plus <code>404.html</code></li>
+  <li><code>site/js/nav.js</code> (the <code>mailto:</code> fallback)</li>
+  <li><code>site/sitemap.xml</code> and <code>site/robots.txt</code> if they reference the old domain</li>
+</ul>
+<p>Then <code>git add . &amp;&amp; git commit -m "Update domain and email to trinity-oaks.com" &amp;&amp; git push</code>.</p>
+
+<!-- ============================================================ -->
+<h2 id="part4">Part 4 &mdash; Verification checklist</h2>
+
+<p>Walk through these in order. Don&rsquo;t move on until each passes.</p>
+
+<h3>Site</h3>
+<ul>
+  <li>[ ] <code>https://trinity-oaks.com</code> loads the new site (not the old Squarespace one).</li>
+  <li>[ ] <code>https://www.trinity-oaks.com</code> either loads or redirects to apex.</li>
+  <li>[ ] Browser shows a padlock (valid SSL cert).</li>
+  <li>[ ] Mobile width (~390px) and desktop (~1280px) both render correctly.</li>
+  <li>[ ] No errors in the browser console.</li>
+  <li>[ ] All footer + nav links work; service anchors (<code>#kitchen</code>, <code>#decks</code> etc.) scroll correctly.</li>
+  <li>[ ] Push a trivial change to GitHub and confirm Cloudflare deploys it within a minute or two.</li>
+</ul>
+
+<h3>Email</h3>
+<ul>
+  <li>[ ] Send a test email <strong>to</strong> <code>info@trinity-oaks.com</code> from a personal Gmail. It arrives in the new inbox.</li>
+  <li>[ ] Send a test email <strong>from</strong> <code>info@trinity-oaks.com</code> to a personal Gmail. It arrives in the inbox (not spam).</li>
+  <li>[ ] Open that received message &rarr; &ldquo;Show original&rdquo;. Confirm <code>SPF: PASS</code>, <code>DKIM: PASS</code>, <code>DMARC: PASS</code>.</li>
+  <li>[ ] Run a free third-party audit: <code>https://mxtoolbox.com/SuperTool.aspx</code> &rarr; enter <code>trinity-oaks.com</code> &rarr; check &ldquo;MX Lookup&rdquo;, &ldquo;SPF Record Lookup&rdquo;, &ldquo;DMARC Lookup&rdquo;. All three should pass.</li>
+  <li>[ ] The contact form on the site, when submitted, opens the mail client with a <code>mailto:</code> draft to the right address.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="part5">Part 5 &mdash; Reference: every DNS record you should end up with</h2>
+
+<p>If you took Path A (Cloudflare DNS + Cloudflare Pages + Google Workspace), the final DNS table for <code>trinity-oaks.com</code> looks like this:</p>
+
+<table>
+  <tr><th>Type</th><th>Name</th><th>Content / Value</th><th>Priority</th><th>Proxy</th><th>Purpose</th></tr>
+  <tr><td>CNAME</td><td><code>@</code></td><td><code>trinity-oaks.pages.dev</code></td><td>&mdash;</td><td>Proxied</td><td>Apex website</td></tr>
+  <tr><td>CNAME</td><td><code>www</code></td><td><code>trinity-oaks.pages.dev</code></td><td>&mdash;</td><td>Proxied</td><td>www website</td></tr>
+  <tr><td>MX</td><td><code>@</code></td><td><code>smtp.google.com</code></td><td>1</td><td>DNS only</td><td>Inbound mail</td></tr>
+  <tr><td>TXT</td><td><code>@</code></td><td><code>v=spf1 include:_spf.google.com ~all</code></td><td>&mdash;</td><td>DNS only</td><td>SPF</td></tr>
+  <tr><td>TXT</td><td><code>google._domainkey</code></td><td><code>v=DKIM1; k=rsa; p=&hellip;</code></td><td>&mdash;</td><td>DNS only</td><td>DKIM</td></tr>
+  <tr><td>TXT</td><td><code>_dmarc</code></td><td><code>v=DMARC1; p=none; rua=mailto:info@trinity-oaks.com&hellip;</code></td><td>&mdash;</td><td>DNS only</td><td>DMARC</td></tr>
+  <tr><td>TXT</td><td><code>@</code></td><td><code>google-site-verification=&hellip;</code></td><td>&mdash;</td><td>DNS only</td><td>Workspace ownership (can be removed after verification, but harmless to leave)</td></tr>
+</table>
+
+<div class="note">
+  <strong>Heads-up about overlapping TXT records on <code>@</code>:</strong> the SPF and the Google verification TXT both sit at the root name. That&rsquo;s fine &mdash; you can have multiple TXT records on the same name. The rule that bites people is &ldquo;don&rsquo;t have <em>two different SPF</em> records,&rdquo; not &ldquo;don&rsquo;t have multiple TXTs.&rdquo;
+</div>
+
+<!-- ============================================================ -->
+<h2 id="part6">Part 6 &mdash; Local dev setup: editor + AI &ldquo;vibe coding&rdquo;</h2>
+
+<p>&ldquo;Vibe coding&rdquo; just means letting an AI assistant write and edit the code while you describe what you want. This project is ideal for it &mdash; it&rsquo;s plain HTML/CSS/JS, no build step, no framework, so the AI can read any file end to end and edit it directly.</p>
+
+<p>Below: pick an editor, pick an AI assistant, then the workflow that ties it all together with the GitHub repo from Part 1.</p>
+
+<h3>6.1  Install prerequisites (one-time)</h3>
+<ul>
+  <li><strong>Node.js LTS</strong> &mdash; <code>https://nodejs.org</code>. The Claude Code and OpenAI Codex CLIs both install via <code>npm</code>, so you need this even if you don&rsquo;t write JavaScript. Pick the LTS installer (currently v22.x). Verify with <code>node --version</code> in a new PowerShell window.</li>
+  <li><strong>Python 3</strong> (optional but useful) &mdash; <code>https://www.python.org/downloads/</code>. Gives you <code>python -m http.server 8080</code> for previewing the site locally. Check &ldquo;Add Python to PATH&rdquo; during install.</li>
+  <li><strong>Git</strong> &mdash; already installed if you finished Part 1.</li>
+</ul>
+
+<h3>6.2  Pick an editor</h3>
+
+<div class="stack-grid">
+  <div class="stack-card recommended">
+    <h4>VS Code <span class="badge">recommended</span></h4>
+    <p style="margin: 0 0 8px 0;"><strong>Cost:</strong> free.</p>
+    <p style="margin: 0 0 8px 0;"><strong>Best for:</strong> works with every AI assistant below (Claude Code, Codex CLI, Copilot, Continue.dev). Biggest extension ecosystem.</p>
+    <p style="margin: 0;"><strong>Get it:</strong> <code>https://code.visualstudio.com/download</code>.</p>
+  </div>
+  <div class="stack-card">
+    <h4>Cursor</h4>
+    <p style="margin: 0 0 8px 0;"><strong>Cost:</strong> free tier, $20/mo Pro.</p>
+    <p style="margin: 0 0 8px 0;"><strong>Best for:</strong> AI baked into the editor &mdash; Tab-to-accept completions, Cmd-K inline edits, agent mode. Uses Claude + GPT under the hood.</p>
+    <p style="margin: 0;"><strong>Get it:</strong> <code>https://cursor.com</code>. It&rsquo;s a VS Code fork, so your settings and extensions carry over.</p>
+  </div>
+  <div class="stack-card">
+    <h4>Windsurf</h4>
+    <p style="margin: 0 0 8px 0;"><strong>Cost:</strong> free tier, $15/mo Pro.</p>
+    <p style="margin: 0 0 8px 0;"><strong>Best for:</strong> similar to Cursor, slightly different UX (&ldquo;Cascade&rdquo; agent flow). Acquired by OpenAI in 2025.</p>
+    <p style="margin: 0;"><strong>Get it:</strong> <code>https://windsurf.com</code>.</p>
+  </div>
+  <div class="stack-card">
+    <h4>Zed</h4>
+    <p style="margin: 0 0 8px 0;"><strong>Cost:</strong> free.</p>
+    <p style="margin: 0 0 8px 0;"><strong>Best for:</strong> very fast (Rust). Built-in AI panel, BYO key for Claude / OpenAI.</p>
+    <p style="margin: 0;"><strong>Get it:</strong> <code>https://zed.dev</code>.</p>
+  </div>
+</div>
+
+<div class="tip">
+  <strong>Recommendation:</strong> Start with <strong>VS Code + Claude Code CLI</strong>. It&rsquo;s the same setup that produced this guide, it&rsquo;s free apart from the model subscription, and the CLI runs alongside any editor &mdash; so if you switch later, your habits transfer.
+</div>
+
+<h3>6.3  Pick an AI assistant</h3>
+
+<h4>Option 1 &mdash; Claude Code (CLI, by Anthropic) <span class="ok">recommended</span></h4>
+<ul>
+  <li>Best at multi-file edits, following project conventions (it reads the <code>CLAUDE.md</code> file at the project root automatically), and running shell commands safely.</li>
+  <li>Install:
+    <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+  </li>
+  <li>First run:
+    <pre><code>cd C:\Users\hgarza\Documents\project\handyman
+claude</code></pre>
+    It will walk you through signing in. You can use a Claude Pro / Max subscription (<code>$20</code> or <code>$100</code>/mo) or an Anthropic API key billed per-token at <code>console.anthropic.com</code>.
+  </li>
+  <li>Inside Claude Code, you just type what you want. Examples:
+    <ul>
+      <li><em>&ldquo;Update the phone number from 336-978-4041 to 336-555-1234 across all pages including the tel: links.&rdquo;</em></li>
+      <li><em>&ldquo;Add a new service called &lsquo;Roofing&rsquo; to services.html with the same card pattern as the others.&rdquo;</em></li>
+      <li><em>&ldquo;Replace the SVG placeholder hero image with a reference to images/hero.jpg, then resize it for mobile.&rdquo;</em></li>
+    </ul>
+  </li>
+</ul>
+
+<h4>Option 2 &mdash; OpenAI Codex CLI</h4>
+<ul>
+  <li>OpenAI&rsquo;s equivalent of Claude Code, also terminal-based, also reads your project files.</li>
+  <li>Install:
+    <pre><code>npm install -g @openai/codex</code></pre>
+  </li>
+  <li>First run:
+    <pre><code>cd C:\Users\hgarza\Documents\project\handyman
+codex</code></pre>
+    Sign in with a ChatGPT Plus / Pro account, or set <code>OPENAI_API_KEY</code> for pay-per-use billing.
+  </li>
+  <li>Same usage style as Claude Code &mdash; describe what you want, it edits files. As of 2026 the default model is GPT-5-Codex.</li>
+</ul>
+
+<h4>Option 3 &mdash; Cursor or Windsurf (IDE with built-in AI)</h4>
+<ul>
+  <li>Install the editor (see 6.2). Open the project folder. The AI panel is on the right.</li>
+  <li>Three modes you&rsquo;ll use:
+    <ul>
+      <li><strong>Tab autocomplete</strong> &mdash; start typing, accept the gray suggestion with Tab.</li>
+      <li><strong>Cmd/Ctrl+K</strong> &mdash; select code, hit the shortcut, describe the change. AI edits inline.</li>
+      <li><strong>Agent / Composer mode</strong> &mdash; full-project edits across multiple files, like Claude Code but inside the editor.</li>
+    </ul>
+  </li>
+  <li>Pick the model in settings. Claude Sonnet 4.6 or GPT-5 are good defaults for HTML/CSS work.</li>
+</ul>
+
+<h4>Option 4 &mdash; GitHub Copilot (VS Code extension)</h4>
+<ul>
+  <li>Good for line-by-line completion, weaker for big multi-file refactors.</li>
+  <li>In VS Code: Extensions panel (Ctrl+Shift+X) &rarr; search &ldquo;GitHub Copilot&rdquo; &rarr; Install. Sign in with the GitHub account from Part 1. Pay tier is $10/mo.</li>
+  <li>Now includes a chat panel and an agent mode similar to Cursor, called <em>Copilot Workspace</em>.</li>
+</ul>
+
+<h4>Option 5 &mdash; Aider (open source, BYO key)</h4>
+<ul>
+  <li>If you want full control and to avoid subscriptions, Aider is a CLI that talks to Claude, OpenAI, Gemini, or local Ollama models.</li>
+  <li>Install:
+    <pre><code>pip install aider-install
+aider-install</code></pre>
+  </li>
+  <li>Run: <code>aider --model sonnet</code> (uses your <code>ANTHROPIC_API_KEY</code>) or <code>aider --model gpt-5</code> (uses <code>OPENAI_API_KEY</code>).</li>
+</ul>
+
+<h3>6.4  The actual vibe-coding workflow for this project</h3>
+
+<p>This loop takes ~30 seconds per edit:</p>
+
+<ol>
+  <li>Open <strong>two terminals</strong> side by side (VS Code&rsquo;s built-in terminal supports split panes).</li>
+  <li>In terminal 1, start the local preview server &mdash; this <strong>must</strong> use HTTP, not <code>file://</code>, or the SVG backgrounds break:
+    <pre><code>cd C:\Users\hgarza\Documents\project\handyman\site
+python -m http.server 8080</code></pre>
+    Open <code>http://localhost:8080</code> in a browser. Leave this terminal running.
+  </li>
+  <li>In terminal 2, start the AI assistant:
+    <pre><code>cd C:\Users\hgarza\Documents\project\handyman
+claude        # or: codex</code></pre>
+  </li>
+  <li>Describe the change in plain English. The AI reads the relevant files, makes edits, and shows you a diff before saving. <strong>Always review diffs</strong> &mdash; even good AI sometimes touches files it shouldn&rsquo;t.</li>
+  <li>Refresh the browser. Verify visually at desktop (~1280px) and mobile (~390px) widths. Check the dev console for errors (F12).</li>
+  <li>When happy, commit and push:
+    <pre><code>git add .
+git commit -m "Short description of what changed"
+git push</code></pre>
+  </li>
+  <li>If you set up Cloudflare Pages (Part 2A), the live site updates ~30 seconds after the push. Refresh <code>https://trinity-oaks.com</code> to confirm.</li>
+</ol>
+
+<h3>6.5  Tips for vibing well on <em>this</em> codebase</h3>
+
+<ul>
+  <li><strong>Lean on <code>CLAUDE.md</code>.</strong> The file at the repo root tells the AI the project&rsquo;s rules (no frameworks, no CDN dependencies, nav changes must hit all 6 HTML files, etc.). Both Claude Code and Codex CLI read it automatically. If you find yourself correcting the AI repeatedly on the same thing, <strong>add it to CLAUDE.md</strong> &mdash; future sessions will respect it without being told.</li>
+  <li><strong>Search-and-replace is your friend.</strong> The site duplicates the header and footer across all 6 HTML pages plus <code>404.html</code>. When asking the AI to update a link, phone number, or email, explicitly say &ldquo;across all HTML files&rdquo; so it doesn&rsquo;t stop after editing <code>index.html</code>.</li>
+  <li><strong>Don&rsquo;t let it add a build step.</strong> If the AI suggests installing Tailwind, React, a static-site generator, npm dependencies, or any kind of bundler &mdash; say no. CLAUDE.md explicitly forbids it, because the owner needs to be able to hand the site to another person who knows basic HTML.</li>
+  <li><strong>Keep diffs small and commit often.</strong> One commit per logical change (&ldquo;Update phone number,&rdquo; &ldquo;Replace project gallery placeholders,&rdquo; &ldquo;Tweak hero copy&rdquo;). It&rsquo;s easier to roll back a single bad change than to untangle a 20-file commit.</li>
+  <li><strong>Use a branch for risky changes.</strong> <code>git checkout -b try-new-hero</code>, make experimental edits, push, see the Cloudflare Pages <em>preview deployment</em> URL (not production), share the link to get feedback, then either merge to <code>main</code> or delete the branch.</li>
+  <li><strong>Test the mailto form after any contact-page edit.</strong> The form in <code>js/nav.js</code> builds a <code>mailto:</code> URL by hand. If the AI refactors that file, click submit on the contact page and confirm it still opens your mail client with the right address.</li>
+</ul>
+
+<h3>6.6  Cost summary for the AI tooling</h3>
+
+<table>
+  <tr><th>Tool</th><th>Plan</th><th>Cost</th><th>Notes</th></tr>
+  <tr><td>Claude Code CLI</td><td>Claude Pro</td><td>$20/mo</td><td>Generous usage for a small site like this.</td></tr>
+  <tr><td>Claude Code CLI</td><td>Anthropic API</td><td>Pay per token</td><td>Usually a few cents per editing session. Useful if you only code occasionally.</td></tr>
+  <tr><td>OpenAI Codex CLI</td><td>ChatGPT Plus</td><td>$20/mo</td><td>Includes Codex CLI usage and the chat product.</td></tr>
+  <tr><td>Cursor / Windsurf</td><td>Pro</td><td>$15&ndash;20/mo</td><td>If you prefer editor-integrated AI over a CLI.</td></tr>
+  <tr><td>GitHub Copilot</td><td>Individual</td><td>$10/mo</td><td>Cheapest, but weaker on multi-file work.</td></tr>
+  <tr><td>Aider</td><td>Open source</td><td>$0 + API tokens</td><td>BYO key, very flexible, slightly more setup.</td></tr>
+</table>
+
+<p>For a single static marketing site, <strong>one</strong> subscription (Claude Pro or ChatGPT Plus, ~$20/mo) is plenty. You don&rsquo;t need both. Pair it with VS Code (free) and you&rsquo;re done.</p>
+
+<h2>What to do next, in order</h2>
+<ol>
+  <li>Install VS Code + Node.js + your AI assistant of choice (Part 6.1&ndash;6.3) &mdash; <strong>~20 minutes</strong>.</li>
+  <li>Install Git, create the GitHub repo, push the code (Part 1) &mdash; <strong>~20 minutes</strong>. The AI can help with this step.</li>
+  <li>Create Cloudflare account, connect Pages to GitHub, confirm preview URL loads (Part 2A.1&ndash;2A.2) &mdash; <strong>~15 minutes</strong>.</li>
+  <li>Sign up for Google Workspace, do the TXT verification (Part 3.1&ndash;3.2) &mdash; <strong>~15 minutes</strong>.</li>
+  <li>Change nameservers at the registrar to Cloudflare (Part 2A.3 Option A) &mdash; <strong>~5 minutes of work, then wait 1&ndash;4 hours for propagation</strong>.</li>
+  <li>Once nameservers have switched: add MX, SPF, DKIM, DMARC, and the Pages custom-domain records all in Cloudflare DNS (Parts 2A.3 + 3.3&ndash;3.6) &mdash; <strong>~30 minutes</strong>.</li>
+  <li>Update placeholders in the repo to the real email + domain, push, verify (Parts 3.8 + 4) &mdash; <strong>~15 minutes</strong>.</li>
+</ol>
+
+<p>Total hands-on time: ~1.5 hours, plus a few hours of waiting for DNS to propagate. The hardest step is just the registrar nameserver change &mdash; everything else is web forms.</p>
+
+<div class="footer">
+  Generated 2026-05-21 for trinity-oaks.com. Live DNS at time of writing: site CNAME = <code>ext-sq.squarespace.com</code> (Squarespace), nameservers = <code>ns-cloud-c*.googledomains.com</code>, no MX records present. Verify pricing on the official Google Workspace and Cloudflare pages &mdash; rates change.
+</div>
+
+</body>
+</html>
