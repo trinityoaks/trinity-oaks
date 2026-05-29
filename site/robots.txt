@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trinityoaksconstruction.com/sitemap.xml
+Sitemap: https://trinity-oaks.com/sitemap.xml

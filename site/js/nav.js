@@ -37,7 +37,7 @@
       'Message:\n' + message;
 
     window.location.href =
-      'mailto:info@trinityoaksconstruction.com' +
+      'mailto:info@trinity-oaks.com' +
       '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(body);
   });
